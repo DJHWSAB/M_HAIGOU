@@ -1,0 +1,25 @@
+// 底部导航(tabbar)
+
+.tabbar {
+  display: flex;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* 📢: z-index 仅对定位元素有效 */
+  z-index: 1;
+  // env() 获取当前环境的函数
+  // safe-area-inset-bottom 底部插入安全区域
+  height: calc(env(safe-area-inset-bottom) + 50px);
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+
+  .item {
+    flex: 1;
+    text-align: center;;
+
+    img {
+      width: 48px;
+    }
+  }
+}

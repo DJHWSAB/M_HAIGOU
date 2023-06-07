@@ -1,0 +1,43 @@
+/*
+  类别区域
+*/
+
+// 引入less文件
+@import url(./variables.less);
+
+.category {
+  display: flex;
+  margin: 0 3.2vw 3.2vw;
+
+  .item {
+    flex: 1;
+    text-align: center;
+
+    .title {
+      font-size: @bigFontSize;
+      font-family: PingFangSC-Semibold;
+      color: #666;
+    }
+
+    .subtitle {
+      height: 4.2667vw;
+      padding: 0 1.6vw;
+      font-size: @smallFontSize;
+      color: #999;
+      border-radius: 2.4vw;
+    }
+
+    // & 表示当前选择器的父级
+    // &.active -> .title.active
+    &.active {
+      .title {
+        color: @mainColor;
+      }
+
+      .subtitle {
+        color: #fff;
+        background-image: linear-gradient(to right, #f00, #ff3164);
+      }
+    }
+  }
+}

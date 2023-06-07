@@ -1,0 +1,49 @@
+/*
+  公共代码
+*/
+
+// 引入less文件(.less可以省略不写)
+@import url(./variables.less);
+
+body {
+  font-size: @normalFontSize;
+  background-color: #f5f5f5;
+}
+
+// 标签
+.tags {
+  display: flex;
+  height: 4vw;
+  margin: 1.3333vw 0;
+
+  .tag {
+    position: relative;
+    height: 3.7333vw;
+    margin-right: .8vw;
+    padding: 0 1.0667vw;
+    line-height: 3.2vw;
+    font-size: @smallFontSize;
+    color: @mainColor;
+    box-sizing: border-box;
+    border: .2667vw solid @mainColor;
+    border-radius: .8vw;
+
+    // 卷
+    &.ticket {
+      // 字体图标的宽度+固定的pl大小
+      padding-left: 6.4vw;
+      // 在有定位的情况下
+      // text-indent: 6.4vw;
+
+      &::before {
+        content: "劵";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        padding: 0 1.0667vw;
+        background-color: #ffe6e7;
+      }
+    }
+  }
+}

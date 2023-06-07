@@ -1,0 +1,52 @@
+/*
+  首页的搜索功能
+*/
+
+// 引入less文件
+@import url(./variables.less);
+
+.search {
+  // 粘性定位
+  position: sticky;
+  top: 0;
+  /* 📢: z-index 仅对定位元素有效 */
+  z-index: 1;
+  display: flex;
+  // 水平方向: 居中显示
+  justify-content: center;
+  // 垂直方向: 居中显示
+  align-items: center;
+  height: 10.6667vw;
+  background-color: #fff;
+
+  .bar {
+    width: 74.6667vw;
+    height: 7.4667vw;
+    line-height: 7.4667vw;
+    box-sizing: border-box;
+    border: 1px solid color(red);
+    border-radius: 4vw;
+
+    .placeholder {
+      // padding-left: 8.8vw;
+      text-indent: 8.8vw;
+      font-size: 3.4667vw;
+      color: #999;
+      background: url(../img/search_icon.png) no-repeat 3.2vw center / 3.2vw 3.33333vw;
+    }
+  }
+
+  .login {
+    width: 16vw;
+    height: 7.4667vw;
+    margin-left: 3.4667vw;
+    line-height: 7.4667vw;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: @smallFontSize;
+    color: #e31436; 
+    // 📢: 如果前面的color有定义颜色,后面的border如果没有定义颜色,会继承color的颜色!!!
+    border: 1px solid;
+    border-radius: .8vw;
+  }
+}

@@ -1,0 +1,72 @@
+/*
+  首页的下载打开APP
+*/
+
+// 引入less文件
+// 1.变量
+@import url(./variables.less);
+// 2.混入
+@import url(./mixins.less);
+
+.download {
+  display: flex;
+  height: 16vw;
+
+  // 左侧区域
+  .area-left {
+    display: flex;
+    // 水平方向: 居中显示
+    justify-content: center;
+    // 垂直方向: 居中显示
+    align-items: center;
+    padding: 0 3.2vw;
+    background-color: #fff;
+    border-bottom: .2667vw solid #e3e3e3;
+    flex: 1;
+    overflow: hidden;
+
+    // logo 
+    .logo {
+      width: 10.6667vw;
+      height: 10.6667vw;
+      border-radius: 2.1333vw;
+      // 盒子阴影
+      box-shadow: 0 0 0.93333vw 0 rgba(0, 0, 0, 0.15);
+    }
+
+    // 信息
+    .info {
+      margin-left: 2.4vw;
+      overflow: hidden;
+      
+      // 标题
+      .title {
+        color: #333;
+        font-size: @normalFontSize;
+        // 小括号可以省略，但是不建议这样使用
+        .nowrap_ellipsis()
+      }
+      
+      // 描述
+      .desc {
+        margin-top: .5333vw;
+        color: #999;
+        font-size: @smallFontSize;
+        // 小括号可以省略，但是不建议这样使用
+        .nowrap_ellipsis()
+      }
+    }
+  }
+
+  // 右侧区域
+  .area-right {
+    width: 25.0667vw;
+    line-height: 16vw;
+    text-align: center;
+    font-size: @bigFontSize;
+    color: #fff;
+    // 背景颜色渐变
+    // background-image: linear-gradient(90deg, #ff0409, #ff3162);
+    background-image: linear-gradient(to right, #ff0409, #ff3162);
+  }
+}

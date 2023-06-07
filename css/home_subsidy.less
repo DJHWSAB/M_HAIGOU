@@ -1,0 +1,135 @@
+/*
+  补贴区域
+*/
+
+// 引入less
+@import url(./variables.less);
+
+.subsidy {
+  width: 93.6vw;
+  height: 44vw;
+  margin: 12px auto;
+  border-radius: 3.2vw;
+  background-color: #fff;
+
+  // 头部
+  .header {
+    display: flex;
+    // 水平方向: 两端对齐
+    justify-content: space-between;
+    align-items: center;
+    height: 10.6667vw;
+    padding: 0 3.2vw;
+
+    // 左侧区域
+    .area-left {
+      display: flex;
+      align-items: flex-end;
+      // align-items: center;
+
+      img {
+        width: 16.8vw;
+      }
+
+      // 倒计时
+      .countDown {
+        // 📢: 解决行内级元素的间隙 !!!
+        display: flex;
+        margin-left: 1.6vw;
+        // margin:3px 0 0 1.6vw;
+        font-size: @smallFontSize;
+
+        .time {
+          width: 4.2667vw;
+          height: 4.2667vw;
+          padding: 0 .5333vw;
+          text-align: center;
+          line-height: 4.2667vw;
+          font-family: PingFangSC-Medium;
+          color: #fff;
+          border-radius: .8vw;
+          background-color: @mainColor;
+        }
+
+        .split {
+          margin: 0 .8vw;
+          color: @mainColor;
+        }
+      }
+    }
+
+    // 右侧区域
+    .area-right {
+      position: relative;
+      padding-right: 2.1333vw;
+      font-size: @smallFontSize;
+      font-family: PingFangSC-Medium;
+      color: @mainColor;
+
+      // & 表示当前选择器的父级
+      &::after {
+        content: "";
+        // 垂直居中
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        width: 1.2vw;
+        height: 1.2vw;
+        border: 1px solid;
+        border-color: @mainColor @mainColor transparent transparent;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  // 数据
+  .list {
+    display: flex;
+
+    .item {
+      flex: 1;
+      text-align: center;
+
+      img {
+        width: 20.8vw;
+        margin-bottom: .8vw;
+      }
+
+      // 价格
+      .price {
+        font-size: @smallFontSize;
+
+        // 新价格
+        .new {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: .2667vw;
+          color: @mainColor;
+
+          // 单位
+          .unit {
+            position: relative;
+            top: .2667vw;
+            margin: 0 3px;
+            font-weight: 700;
+          }
+
+          // 数值
+          .count {
+            font-size: 4vw;
+            font-weight: 700;
+          }
+        }
+
+        // 老价格
+        .old {
+          color: #999;
+          // 删除线
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}
