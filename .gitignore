@@ -1,0 +1,7 @@
+# node_modules和.vscode文件被忽略
+node_modules
+.vscode
+
+
+# build目录下的文件被忽略
+build/
